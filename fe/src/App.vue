@@ -29,6 +29,12 @@ export default {
   },
   methods: {
     f(i,j) {
+      this
+        .axios
+        .post('http://localhost:8082',{i, j})
+        .then( resp => {
+          console.log(resp.data)
+        })
       this.$set(
         this.t[i],
         j,
