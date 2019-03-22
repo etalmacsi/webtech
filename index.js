@@ -1,2 +1,9 @@
-const p = require('./modul.js')
-console.log(p.met(4))
+const express=require('express')
+const app = express()
+
+app.get('/', 
+    (req, res) => 
+        res.send('Hello World!')
+)
+
+app.listen(8082)
