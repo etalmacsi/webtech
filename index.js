@@ -19,6 +19,7 @@ app.get('/',
         db.collection('mammals').find().toArray( (err, cucc) => {
             res.send(cucc)
         })
+        console.log(res)
     }
 )
 
@@ -28,6 +29,24 @@ app.post('/',
         db.collection('mammals').insertOne(req.body, cucc => {
             res.send( cucc )
         })
+    }
+)
+
+app.post('/todo',
+    (req, res) => {
+        console.log(req.body)
+        db.collection('todo').insertOne(req.body, cucc => {
+            res.send( cucc )
+        })
+    }
+)
+
+app.get('/todo',
+    (req, res) => {
+        db.collection('todo').find().toArray( (err, cucc) => {
+            res.send(cucc)
+        })
+        console.log(res)
     }
 )
 
