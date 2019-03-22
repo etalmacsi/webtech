@@ -1,3 +1,6 @@
 module.exports = {
-    prop: 1
+    prop: 1,
+    met(a) {
+        return a+2
+    }
 }

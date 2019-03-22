@@ -1,0 +1,22 @@
+{
+  "name": "milegyen2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomuwhu/milegyen2.git"
+  },
+  "author": "Dr. Nemeth Tamas <tnemeth@inf.u-szeged.hu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomuwhu/milegyen2/issues"
+  },
+  "homepage": "https://github.com/tomuwhu/milegyen2#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
