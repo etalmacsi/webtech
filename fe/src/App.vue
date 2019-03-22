@@ -2,7 +2,9 @@
   <div id="app">
     <table>
       <tr :key="i" v-for="(row,i) in t">
-        <td :key="j" v-for="(cell,j) in row">
+        <td :key="j" 
+            v-for="(cell,j) in row"
+            @click="f(i,j)">
           {{cell}}
         </td>
       </tr>
@@ -15,13 +17,22 @@ export default {
   name: 'app',
   data() {
     return {
-      t: Array(20)
+      next: "X",
+      t: Array(14)
         .fill(0)
         .map( () => 
-          Array(20)
+          Array(14)
             .fill(0)
             .map( () => "" )
         )
+    }
+  },
+  methods: {
+    f(i,j) {
+      this.$set(
+        this.t[i],
+        j,
+        this.next==='X'?this.next='O':this.next='X')
     }
   }
 }
@@ -29,8 +40,9 @@ export default {
 
 <style>
  td {
-   width:15px;
-   height:15px;
+   text-align: center;
+   width:20px;
+   height:20px;
    border-radius: 3px;
    background-color: aqua ;
    box-shadow: 1px 1px 4px black;
