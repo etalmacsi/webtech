@@ -15,8 +15,11 @@ MongoClient.connect('mongodb://localhost:27017/', {
 
 
 app.get('/', 
-    (req, res) => 
-        res.send('Hello World!')
+    (req, res) => {
+        db.collection('mammals').find().toArray( (err, cucc) => {
+            res.send(cucc)
+        })
+    }
 )
 
 app.post('/',
